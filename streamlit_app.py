@@ -47,13 +47,13 @@ else:
         # Generate a streaming response using the Gemini API.
         with st.chat_message("assistant"):
             try:
-                # Start a chat session with history
+                # Start a chat session with history (Updated model name)
                 chat = client.chats.create(
-                    model="gemini-2.5-flash",
+                    model="gemini-3.8-flash",
                     history=chat_history
                 )
                 
-                # Send the new message with streaming enabled (using send_message_stream)
+                # Send the new message with streaming enabled
                 response_stream = chat.send_message_stream(prompt)
                 
                 # Stream the response to the chat using `st.write_stream`
