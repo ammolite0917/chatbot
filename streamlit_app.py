@@ -7,9 +7,9 @@ st.write(
     "This is a simple chatbot that uses Google's Gemini model to generate responses."
 )
 
-# Load Gemini API key from Streamlit Secrets
+# Load Gemini API key from Streamlit Secrets (with .strip() to remove accidental spaces/newlines)
 try:
-    gemini_api_key = st.secrets["GEMINI_API_KEY"]
+    gemini_api_key = st.secrets["GEMINI_API_KEY"].strip()
 except Exception:
     st.error("Gemini API key is not configured in Streamlit Secrets. Please set it up in the app settings.")
     st.stop()
